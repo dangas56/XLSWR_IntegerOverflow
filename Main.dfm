@@ -14,20 +14,29 @@ object frmMain: TfrmMain
   PixelsPerInch = 96
   TextHeight = 13
   object btnLoadImage: TButton
-    Left = 25
-    Top = 69
-    Width = 75
+    Left = 7
+    Top = 7
+    Width = 166
     Height = 25
-    Caption = 'btnLoadImage'
+    Caption = 'Read Excel File With Image'
     TabOrder = 0
     OnClick = btnLoadImageClick
+  end
+  object btnChart: TButton
+    Left = 8
+    Top = 35
+    Width = 166
+    Height = 25
+    Caption = 'Read Excel File With Chart'
+    TabOrder = 1
+    OnClick = btnChartClick
   end
   object xlsWR: TXLSReadWriteII5
     ComponentVersion = '5.20.57'
     Version = xvExcel2007
     DirectRead = False
     DirectWrite = False
-    Left = 12
-    Top = 9
+    Left = 219
+    Top = 6
   end
 end

@@ -11,7 +11,9 @@ type
   TfrmMain = class(TForm)
     xlsWR: TXLSReadWriteII5;
     btnLoadImage: TButton;
+    btnChart: TButton;
     procedure btnLoadImageClick(Sender: TObject);
+    procedure btnChartClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -25,11 +27,20 @@ implementation
 
 {$R *.dfm}
 
+procedure TfrmMain.btnChartClick(Sender: TObject);
+begin
+  xlsWR.Filename := IncludeTrailingPathDelimiter( ExtractFileDir( Application.ExeName) ) +
+                    'ExampleFiles\TestChart.xlsx';
+  xlsWR.Read;
+  ShowMessage('Yay');
+end;
+
 procedure TfrmMain.btnLoadImageClick(Sender: TObject);
 begin
   xlsWR.Filename := IncludeTrailingPathDelimiter( ExtractFileDir( Application.ExeName) ) +
                     'ExampleFiles\TestImage.xlsx';
   xlsWR.Read;
+  ShowMessage('Yay');
 end;
 
 end.
